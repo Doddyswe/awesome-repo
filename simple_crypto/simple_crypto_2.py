@@ -4,9 +4,12 @@ nyttMeddelande = ''
 
 meddelande = input('Var god ange ett meddelande...')
 for bokstav in meddelande:
-    position = alfabet.find(bokstav)
-    nyPosition = (position + key) % 29
-    nyBokstav = alfabet[nyPosition]
-    nyttMeddelande += nyBokstav
+    if bokstav in alfabet:
+        position = alfabet.find(bokstav)
+        nyPosition = (position + key) % 29
+        nyBokstav = alfabet[nyPosition]
+        nyttMeddelande += nyBokstav
+    else:
+        nyttMeddelande += bokstav
 
 print(nyttMeddelande)
